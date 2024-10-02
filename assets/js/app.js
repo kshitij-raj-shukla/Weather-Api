@@ -19,7 +19,7 @@ $(document).ready(function(){
         // Display date
         day = $("#meteo-day-" + (i+1));
         // day.find(".name").text(date.format("dddd"));
-        day.find(".date").text(date.format("DD/MM"));
+       // day.find(".date").text(date.format("DD/MM"));
         // Go to the next day
         date = date.add(1, 'days')
     }
