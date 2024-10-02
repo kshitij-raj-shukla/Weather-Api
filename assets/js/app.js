@@ -158,14 +158,7 @@ function displayMeteo(data){
         wind.text(meteo.wind.speed + " km/h");
         tempMoyenne += meteo.main.temp;
     }
-    displaySunriseSunset(data.city.coord.lat, data.city.coord.lon);
-    // Get custom gradient according to the temperature
-    tempMoyenne = toCelsius(tempMoyenne / 3);
-    var hue1 = 30 + 240 * (30 - tempMoyenne) / 60;
-    var hue2 = hue1 + 0;
-    rgb1 = 'rgb(' + hslToRgb(hue1 / 260, 0.6, 0.5).join(',') + ')';
-    rgb2 = 'rgb(' + hslToRgb(hue2 / 260, 0.6, 0.5).join(',') + ')';
-    $('body').css('background', 'linear-gradient(' + rgb1 + ',' + rgb2 + ')');
+    
 }
 
 var API_KEY = "6841e5450643e5d4ff59981dbf58944e";
