@@ -136,7 +136,7 @@ function displaySunriseSunset(lat, long){
 function displayMeteo(data){
     // Update Google Map URL
     googleMapCity = "https://www.google.fr/maps/place/" + data.city.coord.lat + "," + data.city.coord.lon;
-    $('#meteo-title span').html(' <a href="' + googleMapCity + '" class="text-muted meteo-city" target="_blank">' + data.city.name + ', ' + data.city.country + '</a>');
+    $('#meteo-title span').html(' <a href="' + googleMapCity + '" class="text-muted meteo-city" target="_blank">' + data.city.name +'</a>');
     // Update meteo for each day
     var tempMoyenne = 0;
     for (var i = 0; i < 3; i++){
@@ -158,6 +158,14 @@ function displayMeteo(data){
         wind.text(meteo.wind.speed + " km/h");
         tempMoyenne += meteo.main.temp;
     }
+    displaySunriseSunset(data.city.coord.lat, data.city.coord.lon);
+    // Get custom gradient according to the temperature
+    tempMoyenne = toCelsius(tempMoyenne / 3);
+    var hue1 = 30 + 240 * (30 - tempMoyenne) / 60;
+    var hue2 = hue1 + 0;
+    rgb1 = 'rgb(' + hslToRgb(hue1 / 260, 0.6, 0.5).join(',') + ')';
+    rgb2 = 'rgb(' + hslToRgb(hue2 / 260, 0.6, 0.5).join(',') + ')';
+    $('body').css('background', 'linear-gradient(' + rgb1 + ',' + rgb2 + ')');
     
 }
 
