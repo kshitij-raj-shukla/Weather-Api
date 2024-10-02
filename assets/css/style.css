@@ -7,9 +7,9 @@ html, body{
 body{
     /* Default background */
     background-image:url(../img/pngtree-white-cloud-on-blue-sky-weather-background-image_410050.jpg);
-     background: linear-gradient(#fcfcfc,#ffffff); */
+     background: linear-gradient(#fcfcfc,#ffffff); 
      background-repeat: no-repeat;
-  background-size: cover;
+      background-size: cover;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .container{
@@ -22,9 +22,6 @@ a:hover{
 
 h2 a{
     transition: 0.1s;
-}
-h2 a:hover{
-    color: #ffe946 !important;
 }
 
 .section-title{
